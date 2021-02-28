@@ -3,10 +3,17 @@
 
 ## Установка
 В папке с проектом:
-    pip install virtualenv
-    virtualenv env
-Запустить env/Scripts/activate.bat
-    pip install -r requirements.txt
+```
+pip install virtualenv
+virtualenv env
+```
+
+Запустить
+```
+env/Scripts/activate.bat
+pip install -r requirements.txt
+```
+
 Открыть файл bot/wabot.py и в конструкторе класса ввести свои ApiUrl и token
 
 ```
@@ -21,7 +28,12 @@ class WABot():
 Скачать ngrok https://ngrok.com/download
 Запустить и ввести команду ngrok http 80
 Перейти в папку с проектом и запустить
+
+```
+python manage.py migrate
 python manage.py runserver 80
+```
+
 После этих действий чат-бот в WA будет работать
 
 ## Команды чат-бота
