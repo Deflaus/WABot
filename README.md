@@ -1,21 +1,11 @@
-# WhatsApp Bot
-Бот для рассылки сообщений сотрудникам
+# WABot
 
-## Установка
-В папке с проектом:
-```
-pip install virtualenv
-virtualenv env
-```
+WhatsApp bot for communication with employees
 
-Запустить
-```
-env/Scripts/activate.bat
-pip install -r requirements.txt
-```
+![alt text](https://img.shields.io/badge/python-3.9.7-black)
 
-Открыть файл bot/wabot.py и в конструкторе класса ввести свои ApiUrl и token
-
+### Bot initialization
+####Open the bot/wabot.py file and write your ApiUrl and token into the WABot constructor class
 ```
 class WABot():
     def __init__(self, json):
@@ -25,19 +15,43 @@ class WABot():
         self.APIUrl = 'https://eu287.chat-api.com/'
         self.token = 'asd'
 ```
-Скачать ngrok https://ngrok.com/download
-Запустить и ввести команду ngrok http 80
-Перейти в папку с проектом и запустить
 
+### Run the Bot
+
+#### Install poetry
+```shell
+pip install poetry
+```
+ 
+#### Install the project dependencies
+```shell
+cd src && poetry install
+```
+
+#### Spawn a shell within the virtual environment
+```shell
+poetry shell
+```
+####Download ngrok https://ngrok.com/download
+####Run and enter the command ngrok http 80
+####Go to the file WABot/settings.py
+```
+cd WABot
+```
+####Change the MY_NGROK_HOST variable from the current variable to "{Your link ngrok}"
+####Go back to the src directory
+```
+cd ..
+```
+####Execute the following commands
 ```
 python manage.py migrate
 python manage.py runserver 80
 ```
 
-После этих действий чат-бот в WA будет работать
 
-## Команды чат-бота
-1. Регистрация нового сотрудника
+## Bot commands
+1. New employee registration
 ```
 /registration
 +79999999999
@@ -46,7 +60,7 @@ python manage.py runserver 80
 Отдел
 ```
 
-2. Отправка сообщений сотруднику
+2. Sending messages to an employee
 
 ```
 /message_user
@@ -54,7 +68,7 @@ python manage.py runserver 80
 Сообщение
 ```
 
-3. Отправка сообщений всем сотрудникам отдела
+3. Sending messages to all department employees
 
 ```
 /message_department
